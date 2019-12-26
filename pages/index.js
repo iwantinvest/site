@@ -4,9 +4,11 @@ import Head from '../components/head';
 const Home = () => {
   return (
     <div>
-      <Head title="I want invest: learn what, how and when to invest in" />
+      <Head title="I want invest: learn what, how and when to invest in"
+       ogImage="/public/logo.png" />
 
       <div className="card">
+        <img src="/static/logo.png" alt="I want invest logo" />
         <h1 className="title">Learn what, how and when to invest in</h1>
         <p>
           I want invest — this motivation requires a lot o patience and constant
@@ -34,8 +36,9 @@ const Home = () => {
           color: #333;
           max-width: 600px;
           margin: 0 auto;
-          margin-top: 50vh;
-          transform: translateY(-50%);
+        }
+        .card img {
+          max-width: 100%; 
         }
         .title {
           margin: 0;
