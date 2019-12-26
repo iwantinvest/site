@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div>
       <Head title="I want invest: learn what, how and when to invest in"
-       ogImage="/public/logo.png" />
+       ogImage="/static/logo.png" />
 
       <div className="card">
         <img src="/static/logo.png" alt="I want invest logo" />
