@@ -1,133 +1,48 @@
-import React, { useEffect, useState } from 'react'
-import Link from 'next/link'
+import React from 'react'
 import Head from '../components/head'
-import Nav from '../components/nav'
 
 const Home = () => {
-  const [date, setDate] = useState(null);
-
-  useEffect(() => {
-    async function getDate() {
-      const res = await fetch('/api/date');
-      const newDate = await res.json();
-      setDate(newDate);
-    }
-    getDate();
-  }, []);
-
   return (
     <div>
-      <Head title="Home" />
-      <Nav />
+      <Head title="I want invest: learn what, how and when to invest in" />
 
-      <div className="hero">
-        <h1 className="title">Welcome to Next!</h1>
+      <div className="card">
+        <h1 className="title">Learn what, how and when to invest in</h1>
+        <p>
+          I want invest — this motivation requires a lot o patience and constant learning. You can treat this site as a manual I wish I had when I started investing money.
+          Tweet me <a href="//twitter.com/iwantinvest">@iwantinvest</a> on Twitter to let me know you 
+        </p>
         <p className="description">
-          To get started, edit the <code>pages/index.js</code> or <code>pages/api/date.js</code> files, then save to reload.
+          My name is <a href="//www.kopacki.net">Tomasz Kopacki</a>, and I created this site to share whatever I was able to learn about investing money.
+          It only seems to be an easy thing, but it's not. You'll see here a lot of my ideas. I will tell you about my best moves, and also about the worst ones!
         </p>
 
-        <p className="row date">
-          The date is:&nbsp; {date
-            ? <span><b>{date.date}</b></span>
-            : <span className="loading"></span>}
-        </p>
-
-        <div className='row'>
-          <Link href='https://github.com/zeit/next.js#setup'>
-            <a className='card'>
-              <h3>Getting Started &rarr;</h3>
-              <p>Learn more about Next.js on GitHub and in their examples.</p>
-            </a>
-          </Link>
-          <Link href='https://github.com/zeit/next.js/tree/master/examples'>
-            <a className='card'>
-              <h3>Examples &rarr;</h3>
-              <p>Find other example boilerplates on the Next.js GitHub.</p>
-            </a>
-          </Link>
-          <Link href='https://github.com/zeit/next.js'>
-            <a className='card'>
-              <h3>Create Next App &rarr;</h3>
-              <p>Was this tool helpful? Let us know how we can improve it!</p>
-            </a>
-          </Link>
-        </div>
       </div>
 
       <style jsx>{`
-        .hero {
+        @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+        
+        .card {
+          font-family: 'Roboto Slab', serif;
+          font-size: 16px;
           width: 100%;
           color: #333;
+          max-width: 600px;
+          margin: 0 auto;
         }
         .title {
           margin: 0;
           width: 100%;
           padding-top: 80px;
           line-height: 1.15;
-          font-size: 48px;
-        }
-        .title,
-        .description {
-          text-align: center;
-        }
-        .row {
-          max-width: 880px;
-          margin: 80px auto 40px;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-around;
-        }
-        .date {
-          height: 24px;
-          max-width: calc(100% - 32px)
-          text-align: center;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 0 16px;
-        }
-        .date p {
-          text-align: center;
-        }
-        .date span {
-          width: 176px;
-          text-align: center;
-        }
-        @keyframes Loading {
-          0%{background-position:0% 50%}
-          50%{background-position:100% 50%}
-          100%{background-position:0% 50%}
-        }
-        .date .loading {
-          max-width: 100%;
-          height: 24px;
-          border-radius: 4px;
-          display: inline-block;
-          background: linear-gradient(270deg, #D1D1D1, #EAEAEA);
-          background-size: 200% 200%;
-          animation: Loading 2s ease infinite;
-        }
-        .card {
-          padding: 18px 18px 24px;
-          width: 220px;
-          text-align: left;
-          text-decoration: none;
-          color: #434343;
-          border: 1px solid #9b9b9b;
-        }
-        .card:hover {
-          border-color: #067df7;
-        }
-        .card h3 {
-          margin: 0;
-          color: #067df7;
-          font-size: 18px;
+          font-size: 2rem;
         }
         .card p {
           margin: 0;
           padding: 12px 0 0;
-          font-size: 13px;
+          font-size: 1rem;
           color: #333;
+          text-align: justify;
         }
       `}</style>
     </div>
